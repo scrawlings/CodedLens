@@ -8,6 +8,9 @@
 ;  (4) automatically identify convergance and stop early
 ;  (5) tests and doc strings
 
+; USEFUL:
+;  for the repl: (require '[game-equilibrium-hunter.core :refer :all])
+
 (defn make-player [n]
   (vec (repeat n n)))
 
