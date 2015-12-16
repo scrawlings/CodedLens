@@ -1,2 +1,27 @@
 apply plugin: 'java'
+apply plugin: 'clojure'
+apply plugin: 'idea'
 
+// Refer to these links for including Clojure in Gradle
+//   http://stackoverflow.com/questions/29015575/using-gradle-clojuresq-to-build-clojure
+//   http://dev.clojure.org/display/doc/Getting+Started+with+Gradle
+
+buildscript {
+    repositories { 
+        maven { url "http://clojars.org/repo" } 
+        mavenCentral()
+    }
+    dependencies {
+        classpath "clojuresque:clojuresque:1.7.0" 
+    }
+}
+ 
+
+repositories {
+    maven { url "http://clojars.org/repo" }
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.clojure:clojure:1.7.0"
+}
