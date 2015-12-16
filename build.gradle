@@ -24,4 +24,5 @@ repositories {
 
 dependencies {
     compile "org.clojure:clojure:1.7.0"
+    compile "com.javaslang:javaslang:2.0.0-RC2"
 }
