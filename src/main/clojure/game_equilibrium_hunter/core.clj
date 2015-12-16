@@ -7,6 +7,7 @@
 ;  (3) consider better convergance analysis, (cycles indicate convergance but show variance)
 ;  (4) automatically identify convergance and stop early
 ;  (5) tests and doc strings
+;  (6) avg recalculates sums over a the sliding window, use normal accumulating sums instead
 
 ; USEFUL:
 ;  for the repl: (require '[game-equilibrium-hunter.core :refer :all])
