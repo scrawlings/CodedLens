@@ -7,7 +7,11 @@ import org.junit.Test;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
-public class functionalTests {
+public class FunctionalTests {
+
+    private Stream<BigInteger> fibs() {
+        return fibs(BigInteger.ZERO, BigInteger.ONE);
+    }
 
     private Stream<BigInteger> fibs(final BigInteger a, final BigInteger b) {
         return Stream.cons(a, () -> fibs(b, a.add(b)));
@@ -15,9 +19,8 @@ public class functionalTests {
 
     @Test
     public void testName() throws Exception {
-        Stream<BigInteger> fibs = fibs(BigInteger.ZERO, BigInteger.ONE);
-        
-        for (BigInteger l : fibs.drop(1000000).take(3)) {
+
+        for (BigInteger l : fibs().drop(10000).take(3)) {
             System.out.println(l);
         }
 
