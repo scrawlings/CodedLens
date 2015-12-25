@@ -17,12 +17,21 @@ buildscript {
 }
  
 
+idea {
+  project {
+    languageLevel = "8"
+  }
+}
+
 repositories {
     maven { url "http://clojars.org/repo" }
+    maven { url "http://maven.jzy3d.org/releases" }
     mavenCentral()
 }
 
 dependencies {
     compile "org.clojure:clojure:1.7.0"
     compile "com.javaslang:javaslang:2.0.0-RC2"
+    compile "org.jfree:jfreechart:1.0.19"
+    compile "junit:junit:4.12"
 }
