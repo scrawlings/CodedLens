@@ -12,11 +12,11 @@ public class Round {
     }
 
     public interface Outcome {
-        public void outcome(Player winner, double winnerScore, Player loser, double loserScore);
+        public void outcome(Player winner, int player1strategy, double winnerScore, Player loser, int player2strategy, double loserScore);
     }
 
     public interface Tie {
-        public void tie(double score);
+        public void tie(int player1strategy, int player2strategy, double score);
     }
 
     public void play(Outcome result, Tie tie) {
@@ -27,11 +27,11 @@ public class Round {
         double player2score = game.score(s2, s1);
 
         if (player1score == player2score) {
-            tie.tie(player1score);
+            tie.tie(s1, s2, player1score);
         } else if (player1score > player2score) {
-            result.outcome(p1, player1score, p2, player2score);
+            result.outcome(p1, s1, player1score, p2, s2, player2score);
         } else if (player2score > player1score) {
-            result.outcome(p2, player2score, p1, player1score);
+            result.outcome(p2, s2, player2score, p1, s1, player1score);
         }
     }
 

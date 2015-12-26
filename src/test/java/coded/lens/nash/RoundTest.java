@@ -36,20 +36,20 @@ public class RoundTest {
     public void player1wins() throws Exception {
         Round r = new Round(ALWAYS_0_BEATS_1, ALWAYS_PLAYS_0, ALWAYS_PLAYS_1);
 
-        r.play((w, ws, l, ls) -> assertSame(w, ALWAYS_PLAYS_0), (s) -> fail());
+        r.play((w, wst, wsc, l, lst, lsc) -> assertSame(w, ALWAYS_PLAYS_0), (st1, st2, sc) -> fail());
     }
 
     @Test
     public void player2wins() throws Exception {
         Round r = new Round(ALWAYS_0_BEATS_1, ALWAYS_PLAYS_1, ALWAYS_PLAYS_0);
 
-        r.play((w, ws, l, ls) -> assertSame(w, ALWAYS_PLAYS_0), (s) -> fail());
+        r.play((w, wst, wsc, l, lst, lsc) -> assertSame(w, ALWAYS_PLAYS_0), (st1, st2, sc) -> fail());
     }
 
     @Test
     public void equalStrategyTies() throws Exception {
         Round r = new Round(ALWAYS_0_BEATS_1, ALWAYS_PLAYS_1, ALWAYS_PLAYS_1);
 
-        r.play((w, ws, l, ls) -> fail(), (s) -> {});
+        r.play((w, wst, wsc, l, lst, lsc) -> fail(), (st1, st2, sc) -> {});
     }
 }

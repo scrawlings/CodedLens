@@ -18,11 +18,24 @@ public class FunctionalTests {
     }
 
     @Test
-    public void testName() throws Exception {
+    public void dropAndTakeFromFibs() throws Exception {
 
         for (BigInteger l : fibs().drop(10000).take(3)) {
             System.out.println(l);
         }
+
+    }
+
+    @Test
+    public void getFromFibs() throws Exception {
+        Stream<BigInteger> fibs = fibs();
+
+        System.out.println(fibs.head()); fibs = fibs.tail();
+        System.out.println(fibs.head()); fibs = fibs.tail();
+        System.out.println(fibs.head()); fibs = fibs.tail();
+        System.out.println(fibs.head()); fibs = fibs.tail();
+        System.out.println(fibs.head()); fibs = fibs.tail();
+        System.out.println(fibs.head()); fibs = fibs.tail();
 
     }
 }

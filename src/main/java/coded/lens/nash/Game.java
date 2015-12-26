@@ -8,7 +8,9 @@ public class Game {
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                score[i][j] = Math.random() * Math.random();
+                double r = (Math.random() * 2) - 1;
+                double s = (Math.random() * 2) - 1;
+                score[i][j] = r * s;
             }
         }
     }
