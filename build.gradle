@@ -23,6 +23,13 @@ idea {
   }
 }
 
+clojureRepl {
+    port = "8777"
+    // gradle clojureRepl
+    // lein repl :connect 8777
+}
+
+
 repositories {
     maven { url "http://clojars.org/repo" }
     maven { url "http://maven.jzy3d.org/releases" }
@@ -30,6 +37,7 @@ repositories {
 }
 
 dependencies {
+    compile "org.clojure:tools.nrepl:0.2.11"
     compile "org.clojure:clojure:1.7.0"
     compile "com.javaslang:javaslang:2.0.0-RC2"
     compile "org.jfree:jfreechart:1.0.19"
