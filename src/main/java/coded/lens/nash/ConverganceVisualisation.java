@@ -65,7 +65,7 @@ public class ConverganceVisualisation extends ApplicationFrame {
         XYSeriesCollection dataset = new XYSeriesCollection();
 
         for (int i = 0; i < NUM_SAMPLE_SETS; i++) {
-            XYSeries series = new XYSeries("N: " + NUMBER_OF_STRATEGIES + " (" + i + ")");
+            XYSeries series = new XYSeries("Game " + i);
 
             Tournament tournament = new Tournament(NUMBER_OF_STRATEGIES);
             ScoreAnalysis scoreAnalysis = new ScoreAnalysis();
