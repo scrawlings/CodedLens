@@ -5,6 +5,9 @@ apply plugin: 'idea'
 // Refer to these links for including Clojure in Gradle
 //   http://stackoverflow.com/questions/29015575/using-gradle-clojuresq-to-build-clojure
 //   http://dev.clojure.org/display/doc/Getting+Started+with+Gradle
+// useful clojure command line stuff
+//   gradle clojureRepl
+//   lein repl :connect 8777
 
 buildscript {
     repositories { 
@@ -25,8 +28,6 @@ idea {
 
 clojureRepl {
     port = "8777"
-    // gradle clojureRepl
-    // lein repl :connect 8777
 }
 
 

@@ -63,4 +63,24 @@ public class ScoreAnalysisTest {
         Stream<Double> avgMeanSqrsOverWindow = scoreAnalysis.avgMeanSqrsOverWindow(windowSize, doubles);
         avgMeanSqrsOverWindow.drop(1).take(10).forEach(sum -> System.out.printf("%.2f\n", sum));
     }
+
+
+    public static final int NUMBER_OF_STRATEGIES = 8;
+    public static final int WINDOW_SIZE = NUMBER_OF_STRATEGIES * NUMBER_OF_STRATEGIES;
+
+    @Test
+    public void thing() throws Exception {
+        Tournament tournament = new Tournament(NUMBER_OF_STRATEGIES);
+        ScoreAnalysis scoreAnalysis = new ScoreAnalysis();
+
+
+        scoreAnalysis
+                .avgMeanSqrsOverWindow(WINDOW_SIZE, tournament.scores())
+                .zip(Stream.from(WINDOW_SIZE))
+                .sliding(1,WINDOW_SIZE)
+                .take(WINDOW_SIZE)
+                .map(ls -> ls.head())
+                .forEach(t -> System.out.printf("%.4f %d\n", t._1, t._2));
+
+    }
 }
