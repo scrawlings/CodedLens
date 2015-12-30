@@ -18,7 +18,7 @@ import java.awt.geom.Rectangle2D;
 
 public class ConverganceVisualisation extends ApplicationFrame {
 
-    public static final int NUMBER_OF_STRATEGIES = 10;
+    public static final int NUMBER_OF_STRATEGIES = 16;
     public static final int WINDOW_SIZE = NUMBER_OF_STRATEGIES * NUMBER_OF_STRATEGIES;
     public static final int NUM_SAMPLE_SETS = 4;
 
