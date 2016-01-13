@@ -8,13 +8,13 @@ import java.lang.reflect.Field;
 import java.util.Random;
 
 public class FoodWeb {
+    private final int layers;
     private final int connectedness;
     private List<Species> allSpecies;
     private Array<List<Species>> trophicLayers;
     private Set<Tuple2<Species, Species>> predators;
     private Set<Tuple2<Species, Species>> prey;
     private Map<Species, Integer> trophicLevels;
-    private int layers;
 
     private FoodWeb(final int layers, final int connectedness) {
         this.layers = layers;
