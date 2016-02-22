@@ -7,7 +7,7 @@ import org.junit.Test;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
-public class FunctionalTests {
+public class FunctionalDemoTests {
 
     private Stream<BigInteger> fibs() {
         return fibs(BigInteger.ZERO, BigInteger.ONE);
@@ -30,6 +30,7 @@ public class FunctionalTests {
     public void getFromFibs() throws Exception {
         Stream<BigInteger> fibs = fibs();
 
+        System.out.println(fibs.head()); fibs = fibs.tail();
         System.out.println(fibs.head()); fibs = fibs.tail();
         System.out.println(fibs.head()); fibs = fibs.tail();
         System.out.println(fibs.head()); fibs = fibs.tail();
